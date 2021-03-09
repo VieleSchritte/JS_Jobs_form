@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="вакансии, js jobs, jsjobs, работа, javascript, js, telegram channel, канал, джс, джс джобс, джсджобс">
+    <meta name="description" content="Telegram-канал аггрегирующий javascript вакансии">
+    <title>
+         JS_Jobs
+    </title>
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome_draft.css') }}">
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter51276589 = new Ya.Metrika2({
+                        id: 51276589,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true
+                    });
+
+                    function getURLParameter(name) {
+                        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+                    }
+
+                    var link = getURLParameter('to')
+                    if (link) {
+                        w.yaCounter51276589.reachGoal('gotojob')
+                        w.location = link
+                    }
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+            if (w.opera === "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks2");
+    </script>
+</head>
+<!-- Yandex.Metrika counter -->
+<body>
+    {% block content %}
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/51276589" style="position:absolute; left:-9999px;" alt=""/>
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <div class="container">
+        <div id="main" class="main">
+            <h1>Правила размещения вакансий в Telegram-канале <a href="https://t.me/jsjobs">@jsjobs</a></h1>
+            <p>В канал парсятся Мойкруг и HH. Для того, чтобы найти вакансии по вашей теме, просто кликните на
+                соответствующий тэг.</p>
+            <p>Вы можете <b>бесплатно</b> разместить вакансию на нашем канале, заполнив нашу форму:</p>
+            <label id="form-redirect" class="redirect-to-form">
+                Разместить нашу классную вакансию!
+            </label>
+
+            <p>Также вы можете разместить вакансию, обратившись к администратору
+                <a href="https://t.me/V_Pisareva">@V_Pisareva</a>. В этом случае обратите внимание, что к публикации
+                допускаются только те вакансии, которые оформлены в нашем стиле: </p>
+            <h4>Шаблон вакансии:</h4>
+            <pre>
+                &lt;Название вакансии [жирный]&gt;
+                &lt;Название компании [курсив]&gt;
+                &lt;Теги город и тип занятости&gt;
+                ЗП: &lt;размер вознаграждения [жирный]&gt;
+                &lt;Теги с ключевыми технологиями и инструментами&gt;
+                &lt;Описание&gt;
+                &lt;Ссылка - контактные данные&gt;
+            </pre>
+            <p>Пожалуйста, не вставляйте угловые скобочки из шаблона. Подробнее о том, как оформлять текст - <a
+                    href="https://aboutmessengers.ru/kak-pisat-raznymi-shriftami-v-telegramme/">Как писать разными
+                шрифтами в Telegram (жирным, курсивом)?</a></p>
+            <h4>Пример вакансии:</h4>
+            <pre>
+                <b>Fullstack Javascript Dev</b>
+                <i>ООО Классная компания</i>
+                #Mосква #Офис
+                <b>ЗП: от 100000 руб.</b>
+                #React #Nginx #SQL #Redis
+
+                ООО КК — это платформа, которая помогает 100500 бизнесов по
+                всему миру успешно взаимодействовать со своей аудиторией через
+                социальные сети. Мы — одна из первых и одна из самых крупных
+                в мире компаний в этой индустрии. Мы строим большую и
+                действительно сложную технологическую историю, но основа
+                нашей философии – крутые люди.
+
+                Требования:
+                - React
+                - SQL
+                - Nginx
+                - Redis
+
+                Отправляте ваши отклики на noreply@class.com
+            </pre>
+            <p>По всем вопросам и предложениям обращаться к <a href="https://t.me/V_Pisareva">@V_Pisareva</a>.</p>
+        </div>
+
+        <div id="form" class="form-container">
+            <h1> Заполните свою вакансию по форме ниже: </h1>
+            <form name="jsjobs-form" method="post">
+              <div class="unit vacancy">
+                <h3 class="title">1. Название вакансии:</h3>
+                  <label class="textarea">
+                      <textarea class="area" name="vacancy-name"></textarea>
+                  </label>
+
+              </div>
+              <div class="unit company">
+                <h3 class="title">2. Название компании:</h3>
+                  <label class="textarea">
+                      <textarea class="area" name="company-name"></textarea>
+                  </label>
+
+              </div>
+              <div class="unit office-remote">
+                <h3 class="title">3. Тип занятости:</h3>
+                <div class="radio-buttons">
+                  <label class="dot-label" for="office">
+                    <input id="office" class="dot" type="radio" value="1">
+                    Офис
+                  </label>
+
+                  <label class="dot-label" for="remote">
+                    <input id="remote" class="dot" type="radio">
+                    Удаленка
+                  </label>
+
+                  <label class="dot-label" for="parttime">
+                    <input id="parttime" class="dot" type="radio">
+                    Частичная занятость
+                  </label>
+
+                  <label class="dot-label" for="project">
+                    <input id="project" class="dot" type="radio">
+                    Проект
+                  </label>
+                </div>
+              </div>
+              <div class="unit city">
+                <h3 class="title">4. Город:</h3>
+                <label class="textarea">
+                    <textarea class="area" name="city"></textarea>
+                </label>
+
+              </div>
+              <div class="unit technologies">
+                <h3 class="title">5. Ключевые технологии (пойдут в теги, так что укажите не больше 5 штук через пробел):</h3>
+                <label class="textarea">
+                    <textarea class="area" name="key-technologies"></textarea>
+                </label>
+
+              </div>
+              <div class="unit description">
+                <h3 class="title">6. Описание вакансии:</h3>
+                <label class="textarea">
+                    <textarea class="area vac-descr" name="vacancy-description"></textarea>
+                </label>
+
+              </div>
+              <div class="unit contacts">
+                <h3 class="title">7. Контактные данные (можно указать не просто ник в телеграме, но и немножко его обыграть ;) ):</h3>
+                <label class="textarea">
+                    <textarea class="area" name="contacts"></textarea>
+                </label>
+
+              </div>
+              <div class="bunch-buttons">
+                  <label id="back-button" class="back">Назад</label>
+                  <button class="submit" type="submit">Отправить</button>
+              </div>
+
+            </form>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+<script>
+    let form = document.getElementById('form');
+    form.style.display = 'none';
+
+    let vacancyButton = document.getElementById('form-redirect');
+    let mainContentContainer = document.getElementById('main');
+    let backButton = document.getElementById('back-button');
+
+    function ShowForm() {
+        form.style.display = 'block';
+        mainContentContainer.style.display = 'none';
+    }
+
+    vacancyButton.onclick = function() {
+        form.style.display = 'block';
+        mainContentContainer.style.display = 'none';
+    }
+
+    backButton.onclick = function () {
+        form.style.display = 'none';
+        mainContentContainer.style.display = 'block';
+    }
+</script>

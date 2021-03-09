@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    background-color: #F1F558;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+}
+
+p {
+    text-align: left;
+}
+
+pre {
+    text-align: left;
+    background-color: gainsboro;
+    padding-top: 1.05rem;
+    overflow: auto;
+}
+
+button, .redirect-to-form, .back {
+    margin: 1rem;
+    border: solid 1px transparent;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.redirect-to-form {
+    display: block;
+    width: 36%;
+    margin: auto;
+}
+
+.office-remote {
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dot-label {
+    display: block;
+    text-align: left;
+    cursor: pointer;
+}
+
+.jsjobs-form {
+  width: 70%;
+}
+
+.form-header {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+}
+
+.title, .area {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.area {
+  width: 100%;
+  min-height: 5%;
+  border-radius: 10px;
+  overflow: auto;
+  resize: vertical;
+  border-color: #f1f50f;
+  font-size: 1.3rem;
+}
+
+.vac-descr {
+  min-height: 40rem;
+}
+
+.unit {
+    margin-bottom: 2rem;
+}
+
+.submit {
+    margin-top: 0;
+    display: inline-block;
+    margin-left: 0;
+}
+
+.back {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
