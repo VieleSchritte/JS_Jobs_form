@@ -134,22 +134,22 @@
                 <h3 class="title">3. Тип занятости:</h3>
                 <div class="radio-buttons">
                   <label class="dot-label" for="office">
-                    <input id="office" class="dot" type="radio" value="1">
+                    <input value="office" class="dot" type="radio" name="business">
                     Офис
                   </label>
 
                   <label class="dot-label" for="remote">
-                    <input id="remote" class="dot" type="radio">
+                    <input value="remote" class="dot" type="radio" name="business">
                     Удаленка
                   </label>
 
                   <label class="dot-label" for="parttime">
-                    <input id="parttime" class="dot" type="radio">
+                    <input value="parttime" class="dot" type="radio" name="business">
                     Частичная занятость
                   </label>
 
                   <label class="dot-label" for="project">
-                    <input id="project" class="dot" type="radio">
+                    <input value="project" class="dot" type="radio" name="business">
                     Проект
                   </label>
                 </div>
@@ -159,10 +159,16 @@
                 <label class="textarea">
                     <textarea class="area" name="city"></textarea>
                 </label>
+              <div class="unit salary">
+                  <h3 class="title">5. Зарплатная вилка (если не указана, заполнить фразой "не указана"):</h3>
+                  <label class="textarea">
+                    <textarea class="area" name="salary"></textarea>
+                </label>
+              </div>
 
               </div>
               <div class="unit technologies">
-                <h3 class="title">5. Ключевые технологии (пойдут в теги, так что укажите не больше 5 штук через пробел):</h3>
+                <h3 class="title">6. Ключевые технологии (пойдут в теги, так что укажите не больше 5 штук через пробел):</h3>
                 <label class="textarea">
                     <textarea class="area" name="key-technologies"></textarea>
                 </label>

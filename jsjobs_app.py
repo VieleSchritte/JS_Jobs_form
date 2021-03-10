@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from vacancy_builder import VacancyBuilder
 
 app = Flask('js_jobs', template_folder='templates/', static_folder='static/')
 static_path = os.path.join('JS_Jobs', '../client/static')
@@ -12,15 +13,12 @@ def index():
 
 
 @app.route('/', methods=['POST'])
-def data_processing(request):
-    vacancy_name = request.POST.get('vacancy-name', 0)
-    company_name = request.POST.get('company-name', 0)
-    city = request.POST.get('city', 0)
-    key_technologies = request.POST.get('key-technologies', 0)
-    vacancy_description = request.POST.get('vacancy-description', 0)
-    contacts = request.POST.get('contacts', 0)
-    print('heko')
-    print(vacancy_name, company_name, city, key_technologies, vacancy_description, contacts)
+def data_processing():
+    form_data = request.form
+    business = request.form['business']
+    v = VacancyBuilder()
+    vacancy = v.build_vacancy(form_data, business)
+    return vacancy
 
 
 @app.route('/vacancy_draft')
