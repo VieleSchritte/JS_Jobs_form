@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from vacancy_builder import VacancyBuilder
 
 app = Flask('js_jobs', template_folder='templates/', static_folder='static/')
@@ -9,7 +9,7 @@ app.debug = True
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('welcome_draft.html')
+    return render_template('welcome_form.html')
 
 
 @app.route('/', methods=['POST'])
@@ -18,7 +18,11 @@ def data_processing():
     business = request.form['business']
     v = VacancyBuilder()
     vacancy = v.build_vacancy(form_data, business)
-    return vacancy
+
+    vacancy_name, company_name, city, salary, key_technologies, vacancy_description, contacts = v.draft_vacancy_builder(form_data, business)
+    return render_template('vacancy_draft.html', vacancy_name=vacancy_name, company_name=company_name, city=city,
+                           salary=salary, key_technologies=key_technologies, vacancy_description=vacancy_description,
+                           contacts=contacts)
 
 
 @app.route('/vacancy_draft')

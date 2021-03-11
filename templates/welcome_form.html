@@ -10,7 +10,7 @@
     </title>
     <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/tag.js"></script>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='welcome_draft.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='welcome_form.css' ) }}">
     <script type="text/javascript">
         (function (d, w, c) {
             (w[c] = w[c] || []).push(function () {
@@ -26,7 +26,7 @@
                         return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
                     }
 
-                    var link = getURLParameter('to')
+                    let link = getURLParameter('to')
                     if (link) {
                         w.yaCounter51276589.reachGoal('gotojob')
                         w.location = link
@@ -35,7 +35,7 @@
                 }
             });
 
-            var n = d.getElementsByTagName("script")[0],
+            let n = d.getElementsByTagName("script")[0],
                 s = d.createElement("script"),
                 f = function () {
                     n.parentNode.insertBefore(s, n);
@@ -119,14 +119,14 @@
               <div class="unit vacancy">
                 <h3 class="title">1. Название вакансии:</h3>
                   <label class="textarea">
-                      <textarea class="area" name="vacancy-name"></textarea>
+                      <textarea class="area" name="vacancy-name" required></textarea>
                   </label>
 
               </div>
               <div class="unit company">
                 <h3 class="title">2. Название компании:</h3>
                   <label class="textarea">
-                      <textarea class="area" name="company-name"></textarea>
+                      <textarea class="area" name="company-name" required></textarea>
                   </label>
 
               </div>
@@ -134,22 +134,22 @@
                 <h3 class="title">3. Тип занятости:</h3>
                 <div class="radio-buttons">
                   <label class="dot-label" for="office">
-                    <input value="office" class="dot" type="radio" name="business">
+                    <input value="office" class="dot" type="radio" name="business" required>
                     Офис
                   </label>
 
                   <label class="dot-label" for="remote">
-                    <input value="remote" class="dot" type="radio" name="business">
+                    <input value="remote" class="dot" type="radio" name="business" required>
                     Удаленка
                   </label>
 
                   <label class="dot-label" for="parttime">
-                    <input value="parttime" class="dot" type="radio" name="business">
+                    <input value="parttime" class="dot" type="radio" name="business" required>
                     Частичная занятость
                   </label>
 
                   <label class="dot-label" for="project">
-                    <input value="project" class="dot" type="radio" name="business">
+                    <input value="project" class="dot" type="radio" name="business" required>
                     Проект
                   </label>
                 </div>
@@ -157,12 +157,12 @@
               <div class="unit city">
                 <h3 class="title">4. Город:</h3>
                 <label class="textarea">
-                    <textarea class="area" name="city"></textarea>
+                    <textarea class="area" name="city" required></textarea>
                 </label>
               <div class="unit salary">
                   <h3 class="title">5. Зарплатная вилка (если не указана, заполнить фразой "не указана"):</h3>
                   <label class="textarea">
-                    <textarea class="area" name="salary"></textarea>
+                    <textarea class="area" name="salary" required></textarea>
                 </label>
               </div>
 
@@ -170,21 +170,21 @@
               <div class="unit technologies">
                 <h3 class="title">6. Ключевые технологии (пойдут в теги, так что укажите не больше 5 штук через пробел):</h3>
                 <label class="textarea">
-                    <textarea class="area" name="key-technologies"></textarea>
+                    <textarea class="area" name="key-technologies" required></textarea>
                 </label>
 
               </div>
               <div class="unit description">
                 <h3 class="title">6. Описание вакансии:</h3>
                 <label class="textarea">
-                    <textarea class="area vac-descr" name="vacancy-description"></textarea>
+                    <textarea class="area vac-descr" name="vacancy-description" required></textarea>
                 </label>
 
               </div>
               <div class="unit contacts">
                 <h3 class="title">7. Контактные данные (можно указать не просто ник в телеграме, но и немножко его обыграть ;) ):</h3>
                 <label class="textarea">
-                    <textarea class="area" name="contacts"></textarea>
+                    <textarea class="area" name="contacts" required></textarea>
                 </label>
 
               </div>
