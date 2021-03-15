@@ -1,10 +1,30 @@
 import os
-from flask import Flask, render_template, request, redirect
+import sqlite3
+from flask import Flask, render_template, request
 from vacancy_builder import VacancyBuilder
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+from contextlib import closing
+
+
+
+DATABASE = 'db_schema.sql'
 
 app = Flask('js_jobs', template_folder='templates/', static_folder='static/')
+app.config.from_object('js_jobs')
 static_path = os.path.join('JS_Jobs', '../client/static')
 app.debug = True
+
+
+def connect_db():
+    return sqlite3.connect(app.config['DATABASE'])
+
+
+def init_db():
+    with closing(connect_db()) as db:
+        with app.open_resource('db_schema.sql') as vacancies_db:
+            db.cursor().executescript(vacancies_db.read())
+        db.commit()
 
 
 @app.route('/', methods=['GET'])
