@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keywords" content="вакансии, js jobs, jsjobs, работа, javascript, js, telegram channel, канал, джс, джс джобс, джсджобс">
+        <meta name="description" content="Telegram-канал аггрегирующий javascript вакансии">
+        <title> {{ title }} </title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='welcome_form.css' ) }}">
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter51276589 = new Ya.Metrika2({
+                            id: 51276589,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true
+                        });
+
+                        function getURLParameter(name) {
+                            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+                        }
+
+                        let link = getURLParameter('to')
+                        if (link) {
+                            w.yaCounter51276589.reachGoal('gotojob')
+                            w.location = link
+                        }
+                    } catch (e) {
+                    }
+                });
+
+                let n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () {
+                        n.parentNode.insertBefore(s, n);
+                    };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+                if (w.opera === "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "yandex_metrika_callbacks2");
+        </script>
+    </head>
+    <!-- Yandex.Metrika counter -->
+    <body>
+        <noscript>
+            <div>
+                <img src="https://mc.yandex.ru/watch/51276589" style="position:absolute; left:-9999px;" alt=""/>
+            </div>
+        </noscript>
+    <!-- /Yandex.Metrika counter -->
+        {% block content %}{% endblock content %}
+    </body>
+</html>
