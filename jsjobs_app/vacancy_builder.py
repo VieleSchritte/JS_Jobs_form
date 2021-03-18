@@ -52,6 +52,7 @@ class VacancyBuilder:
         return full_vacancy
 
     def get_vacancy_areas(self, form_data, business):
+        print('=======vacancy builder')
         areas_content = []
         for area in self.areas:
             if area == 'city':

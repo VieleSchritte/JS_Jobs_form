@@ -9,6 +9,7 @@ app = Flask('js_jobs', template_folder='templates/', static_folder='static/')
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+DEBUG = True
 
 """# Setting up database
 engine = create_engine(os.getenv("DATABASE_URL"))
