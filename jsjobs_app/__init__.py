@@ -2,9 +2,6 @@ from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy import create_engine
-from sqlalchemy.orm import scoped_session, sessionmaker
-import os
 
 
 # Initiating app from Flask and configuring it with Config of file config.py
