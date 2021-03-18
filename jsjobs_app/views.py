@@ -19,7 +19,7 @@ def data_processing():
     v = VacancyBuilder()
     # vacancy = v.build_vacancy(form_data, business)
 
-    vacancy_name, company_name, city, salary, key_technologies, vacancy_description, contacts = v.draft_vacancy_builder(form_data, business)
+    vacancy_name, company_name, city, salary, key_technologies, vacancy_description, contacts = v.get_vacancy_areas(form_data, business)
     return render_template('vacancy_draft.html', vacancy_name=vacancy_name, company_name=company_name, city=city,
                            salary=salary, key_technologies=key_technologies, vacancy_description=vacancy_description,
                            contacts=contacts)

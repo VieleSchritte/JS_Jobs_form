@@ -1,3 +1,6 @@
+from jsjobs_app.models import Company
+
+
 class VacancyBuilder:
     def __init__(self):
         self.hash_tags = {
@@ -39,7 +42,7 @@ class VacancyBuilder:
 
         return full_vacancy
 
-    def draft_vacancy_builder(self, form_data, business):
+    def get_vacancy_areas(self, form_data, business):
         areas_content = []
         for area in self.areas:
             if area == 'city':
