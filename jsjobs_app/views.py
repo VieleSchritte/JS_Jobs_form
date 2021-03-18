@@ -7,16 +7,14 @@ from jsjobs_app import app
 static_path = os.path.join('JS_Jobs', '../client/static')
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('welcome_form.html', title='JS_Jobs')
-
-
-@app.route('/', methods=['POST'])
-def get_form():
-    form_data = request.form
-    business = request.form['business']
-    return redirect(url_for('.vacancy_draft', form_data=form_data, business=business))
+    if request.method == 'GET':
+        return render_template('welcome_form.html', title='JS_Jobs')
+    if request.method == 'POST':
+        form_data = request.form
+        business = request.form['business']
+        return redirect(url_for('vacancy_draft', form_data=form_data, business=business))
 
 
 @app.route('/vacancy_draft/<form_data>/<business>')
